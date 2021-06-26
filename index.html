@@ -182,8 +182,55 @@
         <div class="horizontal-bar"></div>
       </div>
     </div>
+
+    <!-- tab links -->
+    <div class="tab-two__background">
+      <div class="tab-two">
+        <nav class="tab-two__links">
+          <ul>
+            <li id="login" class="active">Login</li>
+            <li id="register">Register</li>
+          </ul>
+        </nav>
+        <div class="tab-two__content">
+          <form id="login-tab" class="active">
+            <div class="login-tab__email">
+              <label for="email">Email address</label>
+              <input id="email" type="text" placeholder="name@example.com" />
+              <p>We'll never share your email with anyone else.</p>
+            </div>
+            <div class="login-tab__password">
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="Password" />
+              <p>Password incorrect.</p>
+            </div>
+            <button>Submit</button>
+          </form>
+          <form id="register-tab">
+            <div class="register-tab__full-name">
+              <label for="full-name">Full Name</label>
+              <input id="full-name" type="text" placeholder="Full Name" />
+              <p>We'll never share your email with anyone else.</p>
+            </div>
+            <div class="register-tab__username">
+              <label for="username">Username</label>
+              <input id="username" type="text" placeholder="Username" />
+              <p>We'll never share your email with anyone else.</p>
+            </div>
+            <div class="register-tab__password">
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="Password" />
+              <p>Password incorrect.</p>
+            </div>
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <!-- component scripts -->
     <script src="js/accordion.js"></script>
+    <script src="js/tab.js"></script>
 
     <!-- fontawesome -->
     <script

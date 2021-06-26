@@ -2,4 +2,6 @@
   /* accordion */
   --accordion-border: 1px solid #aaa;
   --accordion-padding: 10px;
+  --tab-black: #343436;
+  --tab-border-radius: 28px;
 }

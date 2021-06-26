@@ -1,0 +1,106 @@
+.tab-two__background {
+  width: 100%;
+  height: 600px;
+  background-color: #16a085;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-two {
+  width: 500px;
+}
+
+.tab-two__links ul {
+  display: flex;
+}
+
+.tab-two__links ul li {
+  width: 50%;
+  background-color: var(--tab-black);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0 calc(var(--tab-border-radius) + 20px);
+  border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
+  font-weight: bold;
+  position: relative;
+  top: var(--tab-border-radius);
+  z-index: 0;
+  transition: 0.8s;
+}
+
+.tab-two__links ul li:hover {
+  cursor: pointer;
+}
+
+.tab-two__links ul li.active {
+  background-color: #fff;
+  color: var(--tab-black);
+}
+
+@keyframes formFadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.tab-two__content form {
+  overflow: hidden;
+  height: 0;
+}
+
+.tab-two__content form.active {
+  height: min-content;
+  animation: formFadeInUp 0.5s ease-out;
+}
+
+.tab-two__content form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-two__content form > div:nth-child(n + 2) {
+  margin-top: 25px;
+}
+
+.tab-two__content {
+  background-color: #fff;
+  padding: 36px 45px;
+  border-radius: var(--tab-border-radius);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 6px 5px #555;
+}
+
+.tab-two__content input {
+  margin: 10px 0;
+  padding: 12px 8px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.tab-two__content p {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.tab-two__content button {
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 15px;
+  padding: 14px 24px;
+  margin-top: 20px;
+  float: right;
+}
+
+.tab-two__content button:hover {
+  background-color: #005bff;
+  cursor: pointer;
+}
