@@ -1,0 +1,237 @@
+.accordion-1 {
+  width: 1000px;
+  height: 200px;
+  display: flex;
+  margin: 50px 0;
+}
+
+.accordion-1__item {
+  width: 20%;
+  height: 100%;
+  background-color: teal;
+  margin-right: 3px;
+  box-shadow: 0 10px 10px #777;
+  transition: 0.5s;
+}
+
+.accordion-1__item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.accordion-1__item:hover {
+  width: 400px;
+  height: 300px;
+}
+
+/* accordion 2 */
+.accordion-2 {
+  width: 800px;
+  height: 300px;
+  display: flex;
+  margin-top: 100px;
+}
+
+.accordion-2__item {
+  width: 25%;
+  height: 100%;
+  opacity: 0.5;
+  transition: 0.5s;
+  filter: blur(3px);
+}
+
+.accordion-2__item:hover {
+  width: 70%;
+  opacity: 1;
+  filter: none;
+  box-shadow: 0 5px 5px #555;
+}
+
+.accordion-2__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* accordion 3 */
+.accordion-3 {
+  width: 80%;
+  height: 500px;
+  color: white;
+  margin: 100px 0;
+  display: flex;
+}
+
+.accordion-3__item {
+  height: 100%;
+  display: flex;
+  width: 150px;
+  transition: width 0.5s ease-in-out;
+}
+
+.accordion-3__item--selected {
+  width: calc(100% - 450px);
+}
+
+.accordion-3__title,
+.accordion-3__content {
+  display: flex;
+  align-items: center;
+}
+
+.accordion-3__title {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 150px;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+  justify-content: center;
+}
+
+.accordion-3__title span {
+  transform: rotateZ(-90deg);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.accordion-3__title:hover {
+  background-color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+.accordion-3__content {
+  line-height: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: white;
+  color: black;
+  transition: max-width 0.2s ease-in-out, opacity 0.1s ease-in;
+  padding: none;
+  max-width: 0;
+  opacity: 0;
+}
+
+.accordion-3__item--selected .accordion-3__content {
+  max-width: calc(100% - 200px);
+  opacity: 1;
+}
+
+.accordion-3__item--selected .accordion-3__title {
+  background-color: white;
+  color: black;
+  cursor: default;
+}
+
+/* accordion 4 */
+.accordion-4 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 600px;
+  background-color: black;
+  color: #c7c7c7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.accordion-4__item {
+  width: 60%;
+  margin: 0 auto;
+  cursor: default;
+}
+
+.accordion-4 .item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px 0;
+}
+
+.accordion-4 .item__main-title {
+  text-transform: uppercase;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.accordion-4 .item__subtitle {
+  font-size: 10px;
+  font-weight: 100;
+  color: #999;
+  width: 100%;
+  margin-left: 30px;
+}
+
+.accordion-4 > :not(.accordion-4__item--hidden) {
+  background-color: #c7c7c7;
+}
+
+.accordion-4 > :not(.accordion-4__item--hidden) .item__header {
+  padding: 20px;
+}
+
+.accordion-4 > :not(.accordion-4__item--hidden) .item__header,
+.accordion-4 > :not(.accordion-4__item--hidden) .item__body p {
+  color: black;
+}
+
+.item__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out;
+}
+
+:not(.accordion-4__item--hidden) > .item__body {
+  max-height: 200px;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.item__body > p {
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+}
+
+:not(.accordion-4__item--hidden) > .item__body > p {
+  opacity: 1;
+}
+
+.accordion-4 .item__body p {
+  margin: 20px;
+  color: #eee;
+  line-height: 24px;
+}
+
+.horizontal-bar {
+  width: 100%;
+  height: 1px;
+  border: 1px solid #c7c7c7;
+  background-color: black;
+}
+
+@keyframes acc4SlideFromLeft {
+  from {
+    transform: translateX(30px) skewX(-10deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(5px) skewX(-10deg);
+    opacity: 1;
+  }
+}
+
+.accordion-4__item--hidden:hover .item__header {
+  position: relative;
+  cursor: pointer;
+  background: linear-gradient(to right, #eee, black);
+  color: black;
+  padding: 20px;
+  animation: acc4SlideFromLeft 0.3s ease-out forwards;
+  transition: transform 1s ease-in-out;
+}
+
+.accordion-4__item--hidden:hover .item__subtitle {
+  color: black;
+}
+
+.accordion-4__item--hidden:hover .fa-arrow-right {
+  color: #eee;
+}

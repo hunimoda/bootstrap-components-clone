@@ -1,0 +1,8 @@
+/* variables */
+@import "css/variable.css";
+
+/* reset stylesheet */
+@import "css/reset.css";
+
+/* import css for each components */
+@import "css/components/accordion.css";
