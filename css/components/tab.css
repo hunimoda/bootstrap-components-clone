@@ -345,3 +345,265 @@
 .modal--make-gray {
   filter: blur(3px) grayscale(50%);
 }
+
+/********************* checkbox tab *********************/
+
+/* checkbox tab - CONTAINER */
+.checkbox-tab__container {
+  background-color: #191828;
+  color: #efedef;
+  width: 800px;
+  height: 500px;
+  font-family: "Roboto", Arial, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+  font-weight: 400;
+  padding: 100px;
+  margin: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* checkbox tab - TITLE */
+@keyframes titleChangeColor {
+  0% {
+    color: #f00;
+  }
+  33% {
+    color: #0f0;
+  }
+  66% {
+    color: #00f;
+  }
+  100% {
+    color: #f00;
+  }
+}
+
+.checkbox-tab__container h2 {
+  font-size: 40px;
+  line-height: 1.1em;
+  animation: titleChangeColor 0.8s linear infinite;
+}
+
+.checkbox-tab__container h2 span {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 30px;
+}
+
+/* checkbox tab - ANCHOR at corner */
+@keyframes anchorBigSmallAlt {
+  from {
+    transform: scale(1.1) rotate(45deg);
+  }
+  to {
+    transform: scale(0.9) rotate(45deg);
+  }
+}
+.checkbox-tab__container a {
+  background-color: #fd264f;
+  color: #fff;
+  display: block;
+  line-height: 1em;
+  margin: 0;
+  padding: 5px 110px;
+  position: absolute;
+  top: 20px;
+  right: -100px;
+  text-align: center;
+  text-decoration: none;
+  animation: anchorBigSmallAlt 1s ease-in-out infinite;
+}
+
+.checkbox-tab__container input:focus {
+  outline: none;
+}
+
+.checkbox-tab__container .tabs {
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin: 0;
+  overflow: hidden;
+}
+
+/* checkbox-tab LABEL */
+.checkbox-tab__container .tabs [class^="tab"] label {
+  color: #efedef;
+  cursor: pointer;
+  display: block;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1em;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* checkbox-tab RADIO BTN */
+.checkbox-tab__container .tabs [class^="tab"] [type="radio"] {
+  border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+  cursor: pointer;
+  appearance: none;
+  display: block;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.checkbox-tab__container .tabs [class^="tab"] [type="radio"]:focus,
+.checkbox-tab__container .tabs [class^="tab"] [type="radio"]:hover {
+  border-bottom: 1px solid #fd264f;
+}
+
+.checkbox-tab__container .tabs [class^="tab"] [type="radio"]:checked {
+  border-bottom: 2px solid #fd264f;
+}
+
+/* checkbox-tab CONTENT */
+.checkbox-tab__container .tabs [class^="tab"] [type="radio"]:checked + div {
+  opacity: 1;
+}
+
+.checkbox-tab__container .tabs [class^="tab"] [type="radio"] + div {
+  display: block;
+  opacity: 0;
+  padding: 2rem 0;
+  width: 90%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* .checkbox-tab__container .tabs .tab-2 {
+  width: 50%;
+} */
+
+.checkbox-tab__container .tabs .tab-2 [type="radio"] + div {
+  width: 200%;
+  margin-left: 200%;
+}
+
+.checkbox-tab__container .tabs .tab-2 [type="radio"]:checked + div {
+  margin-left: 0;
+}
+
+.checkbox-tab__container .tabs .tab-2:last-child [type="radio"] + div {
+  margin-left: 100%;
+}
+
+.checkbox-tab__container .tabs .tab-2:last-child [type="radio"]:checked + div {
+  margin-left: -100%;
+}
+
+/*********************** SLIDE TAB ***********************/
+
+/* Entire Container */
+.slide-tabs {
+  margin: 50px 0;
+  width: 700px;
+  overflow: hidden;
+}
+
+/* Single Tab */
+.slide-tab {
+  height: 100px;
+  display: flex;
+  position: relative;
+}
+
+/* Radio Button */
+.slide-tab input[type="radio"] {
+  width: 20px;
+  height: 100%;
+  appearance: none;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.slide-tab input[type="radio"]:hover {
+  cursor: pointer;
+}
+
+.slide-tab input[type="radio"]:checked {
+  cursor: default;
+}
+
+/* Radio Button Colors - On Hover */
+.slide-tab:nth-child(1) input[type="radio"]:hover {
+  background-color: #e05858;
+}
+.slide-tab:nth-child(2) input[type="radio"]:hover {
+  background-color: #eaa56a;
+}
+.slide-tab:nth-child(3) input[type="radio"]:hover {
+  background-color: #dde788;
+}
+.slide-tab:nth-child(4) input[type="radio"]:hover {
+  background-color: #70efc6;
+}
+
+/* Radio Button Colors */
+.slide-tab:nth-child(1) input[type="radio"],
+.slide-tab:nth-child(1) input[type="radio"]:checked {
+  background-color: #f06868;
+}
+.slide-tab:nth-child(2) input[type="radio"],
+.slide-tab:nth-child(2) input[type="radio"]:checked {
+  background-color: #fab57a;
+}
+.slide-tab:nth-child(3) input[type="radio"],
+.slide-tab:nth-child(3) input[type="radio"]:checked {
+  background-color: #edf798;
+}
+.slide-tab:nth-child(4) input[type="radio"],
+.slide-tab:nth-child(4) input[type="radio"]:checked {
+  background-color: #80ffd6;
+}
+
+/* Slide Tab Content */
+.slide-tab__content {
+  width: calc(100% - 20px);
+  height: 400%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+  border-radius: 0 50px 50px 0;
+
+  margin-left: -200%;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.slide-tab input[type="radio"]:checked + .slide-tab__content {
+  margin-left: 20px;
+  opacity: 1;
+}
+
+/* Slide Tab Content - Background Colors */
+.slide-tab:nth-child(1) .slide-tab__content {
+  background-color: #f06868;
+}
+.slide-tab:nth-child(2) .slide-tab__content {
+  background-color: #fab57a;
+  margin-top: -100px;
+}
+.slide-tab:nth-child(3) .slide-tab__content {
+  background-color: #edf798;
+  margin-top: -200px;
+}
+.slide-tab:nth-child(4) .slide-tab__content {
+  background-color: #80ffd6;
+  margin-top: -300px;
+}
+
+/* Inner Text of Slide Tab Content */
+.slide-tab__content h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.slide-tab__content p {
+  line-height: 1.6em;
+  margin-top: 10px;
+  width: 600px;
+  text-align: justify;
+}
