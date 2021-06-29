@@ -4,4 +4,5 @@
   --accordion-padding: 10px;
   --tab-black: #343436;
   --tab-border-radius: 28px;
+  --scrollbar-width: calc(100vw - 100%);
 }
